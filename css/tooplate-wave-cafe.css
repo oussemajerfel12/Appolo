@@ -398,4 +398,76 @@ h2 { margin-top: 0; }
         margin: 0;
     }
 
+    /* Styles for the navigation items */
+.tm-tab-link {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments for navigation items */
+@media (max-width: 768px) {
+    .tm-site-nav-ul {
+        flex-direction: column;
+        align-items: flex-start;
+     
+    }
+    
+    .tm-page-link {
+        width: auto;
+        padding: 10px 15px; /* Adjust padding as needed */
+        font-size: 1rem; /* Adjust font size as needed */
+    }
+}
+
+/* Existing styles... */
+
+/* Styles for the navigation items */
+.tm-tab-link {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Responsive adjustments for navigation items */
+@media (max-width: 768px) {
+    .tm-site-nav-ul {
+        flex-direction: column;
+        align-items: stretch; /* Stretch items to full width */
+    }
+    
+    .tm-page-link {
+        width: 100%; /* Occupy full width */
+        padding: 15px; /* Increase padding for touch-friendly area */
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .tm-page-link-icon {
+        margin: 0 auto; /* Center icon */
+    }
+    
+    .tm-drinks-nav {
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+    
+    .tm-drinks-nav > ul {
+        flex-wrap: nowrap; /* Prevent items from wrapping */
+        gap: 10px; /* Add some gap between items */
+        padding: 10px; /* Add padding for touch-friendly area */
+    }
+    
+    .tm-drinks-nav > ul > li {
+        margin: 0 5px; /* Add some margin between items */
+    }
+}
+
+/* Other media queries for responsiveness... */
+
+
+
 }
