@@ -146,31 +146,31 @@
                 <div class="tm-list-item">          
                   <img src="img/eau0.5.jpeg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
-                    <h3 class="tm-list-item-name">eau 0,5 L<div style="width: 10%;"></div><span class="tm-list-item-price">1500</span></h3>
+                    <h3 class="tm-list-item-name">eau 0,5 L<div style="width: 5%;"></div><span class="tm-list-item-price">1.500</span></h3>
                   </div>
                 </div>
                 <div class="tm-list-item">          
                   <img src="img/eau1L.jpeg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
-                    <h3 class="tm-list-item-name">eau 1 L + PLAT<div style="width: 10%;"></div><span class="tm-list-item-price">2500</span></h3>
+                    <h3 class="tm-list-item-name">eau 1 L + PLAT<div style="width: 5%;"></div><span class="tm-list-item-price">2.500</span></h3>
                   </div>
                 </div>
                 <div class="tm-list-item">          
                   <img src="img/soda.jpeg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
-                    <h3 class="tm-list-item-name">Soda<div style="width: 10%;"></div><span class="tm-list-item-price">2500</span></h3>
+                    <h3 class="tm-list-item-name">Soda<div style="width: 5%;"></div><span class="tm-list-item-price">2.500</span></h3>
                   </div>
                 </div>
                 <div class="tm-list-item">          
                   <img src="img/Schweppes.jpeg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
-                    <h3 class="tm-list-item-name">Schweppes (aux choix)<div style="width: 10%;"></div> <span class="tm-list-item-price">3500</span></h3>
+                    <h3 class="tm-list-item-name">Schweppes (aux choix)<div style="width: 5%;"></div> <span class="tm-list-item-price">3.500</span></h3>
                   </div>
                 </div>
                 <div class="tm-list-item">          
                   <img src="img/Boisson energetique.jpeg" alt="Image" class="tm-list-item-img">
                   <div class="tm-black-bg tm-list-item-text">
-                    <h3 class="tm-list-item-name">Boisson energetique <div style="width: 10%;"></div> <span class="tm-list-item-price">7000</span></h3>
+                    <h3 class="tm-list-item-name">Boisson energetique <div style="width: 5%;"></div> <span class="tm-list-item-price">7.000</span></h3>
                   </div>
                 </div>
                          
@@ -411,7 +411,6 @@
     <footer class="tm-site-footer">
       <p class="tm-black-bg tm-footer-text">Copyright 2023 Appolo Art Coffee
       
-      | Design: <a href="https://www.tooplate.com" class="tm-footer-link" rel="sponsored" target="_parent">Tooplate</a></p>
     </footer>
   </div>
     
@@ -426,20 +425,28 @@
   <script src="js/jquery-3.4.1.min.js"></script>    
   <script>
 
-    function setVideoSize() {
-      const vidWidth = 1920;
-      const vidHeight = 1080;
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-      const tempVidWidth = windowHeight * vidWidth / vidHeight;
-      const tempVidHeight = windowWidth * vidHeight / vidWidth;
-      const newVidWidth = tempVidWidth > windowWidth ? tempVidWidth : windowWidth;
-      const newVidHeight = tempVidHeight > windowHeight ? tempVidHeight : windowHeight;
-      const tmVideo = $('#tm-video');
+function setVideoSize() {
+    const vidWidth = 1920;
+    const vidHeight = 1080;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const aspectRatio = vidWidth / vidHeight;
 
-      tmVideo.css('width', newVidWidth);
-      tmVideo.css('height', newVidHeight);
+    let newVidWidth, newVidHeight;
+
+    if (windowWidth / windowHeight > aspectRatio) {
+        newVidWidth = windowWidth;
+        newVidHeight = windowWidth / aspectRatio;
+    } else {
+        newVidWidth = windowHeight * aspectRatio;
+        newVidHeight = windowHeight;
     }
+
+    const tmVideo = document.getElementById('tm-video');
+    tmVideo.style.width = `${newVidWidth}px`;
+    tmVideo.style.height = `${newVidHeight}px`;
+}
+
 
     function openTab(evt, id) {
       $('.tm-tab-content').hide();

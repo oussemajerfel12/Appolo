@@ -37,25 +37,43 @@ p {
 
 h2 { margin-top: 0; }
 
+/* Styles pour la vidéo en arrière-plan */
 #tm-video {
     position: fixed;
     right: 0;
-    bottom: 0;    
+    bottom: 0;
     z-index: -1000;
+    min-width: 100%; /* Ajuster la largeur */
+    min-height: 100%; /* Ajuster la hauteur */
+    width: auto;
+    height: auto;
 }
 
-.tm-video-wrapper { position: relative; }
+.tm-video-wrapper {
+    position: relative;
+    overflow: hidden; /* Assurer que la vidéo ne dépasse pas le conteneur */
+}
 
+/* Styles pour le bouton de contrôle */
 #tm-video-control-button {
     cursor: pointer;
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    background-color: rgba(0,0,0,0.5);
-    color: white;    
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     padding: 10px;
+    display: none; /* Masquer le bouton sur les petits écrans */
 }
+
+/* Afficher le bouton de contrôle uniquement sur les écrans plus grands */
+@media (min-width: 768px) {
+    #tm-video-control-button {
+        display: block;
+    }
+}
+
 
 .tm-container { padding: 30px; }
 
@@ -359,4 +377,5 @@ h2 { margin-top: 0; }
 
     .tm-drinks-nav > ul > li { margin-bottom: 10px; }
     .tm-drinks-nav > ul > li > a { display: block; }
+    
 }
