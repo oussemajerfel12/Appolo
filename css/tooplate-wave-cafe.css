@@ -117,12 +117,21 @@ h2 { margin-top: 0; }
     justify-content: space-between;
 }
 
+.tm-drinks-nav {
+    display: flex;
+    gap: 50px;
+    overflow-x: auto; 
+    outline-color: rgba(0,0,0,0.6);/* Enable horizontal scrolling if needed */
+    
+    white-space: nowrap; /* Prevent items from wrapping */
+}
+
 .tm-page-nav-item { margin-top: 20px; }
 
 .tm-page-link {
     min-width: 240px;
     height: 100px;
-    background-color: rgba(255, 255, 255, 0.6) ;
+    background-color:  rgba(0,0,0,0.6);
     color: rgb(131, 9, 27);
     display: flex;
     text-decoration: none;
@@ -132,7 +141,7 @@ h2 { margin-top: 0; }
 
 .tm-page-link:hover,
 .tm-page-link.active {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     color: white;
 }
 
@@ -152,6 +161,7 @@ h2 { margin-top: 0; }
 
 .tm-drinks-nav > ul > li > a {
     color: white;
+   
     font-size: 1.2rem;
     padding-top: 15px;
     padding-bottom: 5px;
@@ -163,6 +173,7 @@ h2 { margin-top: 0; }
 
 .tm-drinks-nav > ul {
     display: flex;
+    gap: 20px;
     align-items: center;
     justify-content: space-around;
     height: 100%;
@@ -464,6 +475,7 @@ h2 { margin-top: 0; }
     .tm-drinks-nav > ul > li {
         margin: 0 5px; /* Add some margin between items */
     }
+    
 }
 
 /* Other media queries for responsiveness... */
