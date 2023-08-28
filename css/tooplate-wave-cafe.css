@@ -467,7 +467,7 @@ h2 { margin-top: 0; }
     }
     
     .tm-page-link {
-        width: 100%; /* Occupy full width */
+        width: 91%; /* Occupy full width */
         padding: 15px; /* Increase padding for touch-friendly area */
         font-size: 1rem;
         text-align: center;
